@@ -1,0 +1,12 @@
+function [x,y]=draw_Coor(x0,y0,sita)
+ [coor_x1,coor_y1]=cal_Coor(xx_t(size_y),yy_t(size_y),sita,0.5);
+ [coor_x2,coor_y2]=cal_Coor(xx_t(size_y),yy_t(size_y),sita+pi/2.0,0.5);
+ x(1)=coor_x1;
+ x(2)=coor_x2;
+ y(1)=coor_y1;
+ y(2)=coor_y2;
+ [arrow1_l_x,arrow1_l_y]=cal_Coor(x(1),y(1),sita+3*pi/4,0.1);
+ [arrow1_r_x,arrow1_r_y]=cal_Coor(x(1),y(1),sita+3*pi/4+pi/2.0,0.1);
+ x
+ [arrow2_l_x,arrow2_l_y]=cal_Coor(x(2),y(2),sita+3*pi/4+pi/2,0.1);
+ [arrow2_r_x,arrow2_r_y]=cal_Coor(x(2),y(2),sita+3*pi/4+pi,0.1);

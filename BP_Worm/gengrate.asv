@@ -1,0 +1,16 @@
+function [P T]=generate()
+[x y]=meshgrid(-1:5:20)
+[size_x size_y]=size(x)
+e_x=30*exp(-((x-15).^2+(y-10).^2)/30).*(15-x)/15;
+e_y=30*exp(-((x-15).^2+(y-10).^2)/30).*(10-y)/15;
+tem=e_x/(sqrt(e_x.^2+e_y.^2));
+sita=acos(tem)
+v_x=[1 0 0];
+tem_0=zeros(1,size_x);
+v_f=[e_x' e_y' tem']
+for i=1:size_x
+    judge=cross(v_x,v_f(i,:));
+    if judge(3)<0
+        sita(i)=2*pi-sita(i);
+    end
+end
